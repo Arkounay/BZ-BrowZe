@@ -1,0 +1,52 @@
+<div *ngIf="server">
+  <h2>{{server.name|uppercase}} Details</h2>
+
+  <div class="columns">
+    <div class="column">
+      <table class="table">
+        <tbody>
+          <tr>
+            <td>Game Time</td>
+            <td>{{server.ping}}</td>
+          </tr>
+          <tr>
+            <td>Ping</td>
+            <td>{{server.ping}}</td>
+          </tr>
+          <tr>
+            <td>Max Ping Allowed</td>
+            <td>{{server.maxPing}}</td>
+          </tr>
+          <tr>
+            <td>Map</td>
+            <td>{{server.mapName}}</td>
+          </tr>
+          <tr>
+            <td>Max players</td>
+            <td>{{server.maxPlayers}}</td>
+          </tr>
+          <tr>
+            <td>Version</td>
+            <td>{{server.version}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="column">
+      <strong>Players</strong> ({{server.players.length}} / {{server.maxPlayers}})
+      <ul class="list-unstyled">
+        <li *ngFor="let player of server.players">
+          <div class="chip">
+            <figure class="avatar avatar-sm" [attr.data-initial]="player.initials" style="background-color: #5755d9;"></figure>
+            {{player.name}}
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="btn-launch-wrapper" *ngIf="server.isJoinable()">
+    <a class="btn btn-launch btn-primary" href="steam://run/624970">Start BZCC!</a>
+  </div>
+
+</div>

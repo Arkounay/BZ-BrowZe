@@ -1,0 +1,10 @@
+img {
+  margin-right: 10px;
+}
+
+.github-ribbon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+}

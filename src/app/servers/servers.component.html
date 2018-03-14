@@ -1,0 +1,31 @@
+<h2>Game Servers</h2>
+
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Game Name</th>
+        <th>Pwd</th>
+        <th>Ping</th>
+        <th>Players</th>
+        <th>Map Name</th>
+        <th>Game Type</th>
+        <th>Mod</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let server of servers; trackBy: (identify)" (click)="onSelect(server)" [class.selected]="server === selectedServer">
+        <td>{{server.name}}</td>
+        <td class="lock-icon"><span [class]="getAuthentificationIconClass(server)"></span></td>
+        <td>{{server.ping}}</td>
+        <td [class.full]="server.isFull()">{{server.players.length}} / {{server.maxPlayers}}</td>
+        <td>{{server.mapName}}</td>
+        <td>{{server.gameType}}</td>
+        <td>{{server.mod}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<app-server-detail [server]="selectedServer"></app-server-detail>

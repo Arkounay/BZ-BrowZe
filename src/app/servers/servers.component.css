@@ -1,0 +1,31 @@
+.table-responsive {
+  overflow-x:auto;
+}
+
+tr {
+  cursor: pointer;
+  transition: 200ms;
+}
+
+.selected {
+  color: white;
+  background-color: #007aea !important;
+}
+
+.selected:hover {
+  background-color: #004395 !important;
+}
+
+app-server-detail {
+  display: block;
+  margin-top: 20px;
+}
+
+.full {
+  color: #a0a0a0;
+}
+
+.lock-icon {
+  width: 30px;
+  text-align: center;
+}
