@@ -12,6 +12,7 @@ export class Server {
     mapName: string;
     gameTime: number;
     mod: string;
+    inLobby: boolean;
     authentificationType: GameAuthentificationType;
     players: Player[];
 

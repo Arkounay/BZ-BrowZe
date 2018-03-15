@@ -93,6 +93,11 @@ export interface RemoteServer {
    */
   pl: RemotePlayer[];
 
+  /**
+   * Server Info ? 1,4: in lobby ?
+   */
+  si: number;
+
 }
 
 interface RemotePlayer {

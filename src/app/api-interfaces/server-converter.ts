@@ -57,6 +57,7 @@ export class ServerConverter {
     res.authentificationType = authType;
     res.players = players;
     res.mod = (remoteServer.mm === '0' ? 'Stock' : remoteServer.mm);
+    res.inLobby = remoteServer.si === 1 || remoteServer.si === 4;
 
     return res;
   }

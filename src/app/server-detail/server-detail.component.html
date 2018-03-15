@@ -8,8 +8,8 @@
         <tbody>
           <tr>
             <td>Game Time</td>
-            <td *ngIf="server.gameTime > 0; else inLobby">Playing for {{server.gameTime}} minutes</td>
-            <ng-template #inLobby><td>In lobby</td></ng-template>
+            <td *ngIf="server.gameTime > 0 && !server.inLobby; else inLobby">Playing for {{server.gameTime}} minute{{server.gameTime > 1 ? 's' : ''}}</td>
+            <ng-template #inLobby><td>Not playing or in shell <span *ngIf="server.gameTime > 0"> for {{server.gameTime}} minute{{server.gameTime > 1 ? 's' : ''}}</span></td></ng-template>
           </tr>
           <tr>
             <td>Ping</td>
