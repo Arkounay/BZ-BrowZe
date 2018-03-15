@@ -21,7 +21,7 @@ export class ServerService {
       tap(_ => console.log('fetched servers')),
       map(apiRes => {
         const res: Server[] = [];
-        const serverList: RemoteServer[] = apiRes.GET;
+        const serverList: RemoteServer[] = <RemoteServer[]> apiRes.GET;
         for (const remoteServer of serverList) {
           res.push(ServerConverter.convertRemoteServer(remoteServer));
         }

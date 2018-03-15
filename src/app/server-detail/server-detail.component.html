@@ -1,5 +1,6 @@
 <div *ngIf="server">
   <h2>{{server.name|uppercase}} Details</h2>
+  <div *ngIf="server.description" class="description text-italic">{{server.description}}</div>
 
   <div class="columns">
     <div class="column">
@@ -7,7 +8,8 @@
         <tbody>
           <tr>
             <td>Game Time</td>
-            <td>{{server.ping}}</td>
+            <td *ngIf="server.gameTime > 0; else inLobby">Playing for {{server.gameTime}} minutes</td>
+            <ng-template #inLobby><td>In lobby</td></ng-template>
           </tr>
           <tr>
             <td>Ping</td>
@@ -46,7 +48,7 @@
   </div>
 
   <div class="btn-launch-wrapper" *ngIf="server.isJoinable()">
-    <a class="btn btn-launch btn-primary" href="steam://run/624970">Start BZCC!</a>
+    <a class="btn btn-launch btn-primary" href="steam://run/624970"><span class="fa fa-steam"></span> Start BZCC!</a>
   </div>
 
 </div>

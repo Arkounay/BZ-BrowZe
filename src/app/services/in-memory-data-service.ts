@@ -14,6 +14,7 @@ export class InMemoryDataService implements InMemoryDbService {
         'k': 1,
         'm': 'MPIchill',
         'mu': '',
+        'h': 'Test description',
         'gt': 2,
         'gtd': 13,
         'pg': 33,

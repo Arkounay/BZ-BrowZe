@@ -1,4 +1,8 @@
-img {
+h1 {
+  color: #0274a4;
+}
+
+.icon {
   margin-right: 10px;
 }
 
@@ -7,4 +11,9 @@ img {
   top: 0;
   right: 0;
   border: 0;
+}
+
+app-servers {
+  display: block;
+  margin-top: 40px;
 }

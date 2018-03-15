@@ -44,8 +44,9 @@ export class ServerConverter {
     }
 
     const res = new Server();
-    res.id = remoteServer.g;
+    res.id = remoteServer.g + res.name;
     res.name = decodedName;
+    res.description = remoteServer.h;
     res.version = remoteServer.v;
     res.ping = remoteServer.pg;
     res.maxPing = remoteServer.pgm;

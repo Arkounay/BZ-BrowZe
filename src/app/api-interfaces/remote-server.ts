@@ -79,7 +79,7 @@ export interface RemoteServer {
   mm: string;
 
   /**
-   * Unknown
+   * Description ?
    */
   h: string | null;
 

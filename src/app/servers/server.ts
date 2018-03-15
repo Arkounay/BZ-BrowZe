@@ -3,6 +3,7 @@ import { GameAuthentificationType } from './game-authentification-type.enum';
 export class Server {
     id: string;
     name: string;
+    description: string;
     version: string;
     maxPlayers: number;
     ping: number;
@@ -42,7 +43,7 @@ export class Player {
         const upper = name.replace(/[^A-Z]/g, '');
 
         if (upper.length !== 2) {
-            res = name.replace(/({.*})|(\*.*\*)|(\[.*])|\:|\~|\-|\_/g, '')
+            res = name.replace(/({.*})|(\*.*\*)|(\[.*])|\:|\~|\-|\_|\^/g, '')
                 .split(/\s|\./)
                 .map(n => n[0])
                 .join('')

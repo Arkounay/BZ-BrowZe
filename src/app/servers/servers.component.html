@@ -23,6 +23,9 @@
         <td>{{server.gameType}}</td>
         <td>{{server.mod}}</td>
       </tr>
+      <tr *ngIf="servers && servers.length == 0">
+        <td colspan="7" class="text-center">No servers found 😢</td>
+      </tr>
     </tbody>
   </table>
 </div>
